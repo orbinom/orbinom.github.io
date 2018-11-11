@@ -234,7 +234,7 @@ button
 	$( document ).ready(function() {
 		var verifyid = getCookie("verifyid");
 		if (verifyid) {
-			chash= Sha1.hash(verifyid);
+			var chash= Sha1.hash(verifyid);
 			window.location= chash;
 		} else {
 			$(".box").fadeIn("slow");
