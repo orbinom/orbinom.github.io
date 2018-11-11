@@ -189,8 +189,7 @@ button
 				var tmp = $('#password').val().substr(0,3);
 				$('#password').val(tmp);
 			}
-		}
-		if ($('#password').val().length == 4) {
+		} else if ($('#password').val().length == 4) {
 				$("#password").val($("#password").val()+'-');
 		}
 	});
