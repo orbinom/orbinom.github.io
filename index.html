@@ -23,6 +23,7 @@ body {
 .box {
 	border-radius: 5px;
 	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px 12px 4px 12px;
+	display: none;
 }
 
 .lightbox {
@@ -169,21 +170,38 @@ button
 			url : url,
 			dataType : "html",
 			success : function(data) {
-
+				setCookie("verifyid", pwd, 60);
 				window.location= hash;
-
 			},
 			error : function(xhr, ajaxOptions, thrownError) {
-
-
-				parent.location.hash= hash;
-
 				$("#password").attr("placeholder","wrong code");
 				$("#password").val("");
 			}
 		});
 	}
 
+	function setCookie(cname, cvalue, exminutes) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exminutes*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var decodedCookie = decodeURIComponent(document.cookie);
+	    var ca = decodedCookie.split(';');
+	    for(var i = 0; i <ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0) == ' ') {
+	            c = c.substring(1);
+	        }
+	        if (c.indexOf(name) == 0) {
+	            return c.substring(name.length, c.length);
+	        }
+	    }
+	    return "";
+	}
 
 	$("#loginbutton").on("click", function() {
 		loadPage($("#password").val());
@@ -212,6 +230,16 @@ button
 		}, 0);
 	});
 	$("#password").focus();
+
+	$( document ).ready(function() {
+		var verifyid = getCookie("verifyid");
+		if (verifyid) {
+			chash= Sha1.hash(verifyid);
+			window.location= chash;
+		} else {
+			$(".box").fadeIn("slow");
+		}
+	});
 
 	</script>
 
