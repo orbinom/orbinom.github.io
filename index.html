@@ -1,17 +1,18 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title></title>
+	<title>Achraf Rekaya | Online portfolio</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A modern curriculum vitae for employers, welcome to achraf s personal portfolio">
+	<meta name="keywords" content="achraf, rekaya, ben, personal, blog, portfolio, developer, entwickler, webentwickler, c++, kit, karlsruhe, qa, quality, assurance">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <style>
 
 body {
-
+	font-family: sans-serif;
 	background-image: url('background.png');
 	background-attachment: fixed;
 	background-size: cover;
@@ -20,7 +21,7 @@ body {
 }
 
 .box {
-	border-radius: 3px;
+	border-radius: 5px;
 	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px 12px 4px 12px;
 }
 
@@ -121,6 +122,13 @@ button
 	{
 		background-color: #444444;
 	}
+.welcomeMessage {
+	font-size: 12px;
+	color: #bbb;
+	width: 180px;
+	margin: 0 5px;
+	margin-bottom: 10px;
+}
 
 </style>
 
@@ -130,9 +138,11 @@ button
 		<div class="horizontal">
 			<div class="vertical">
 				<div class="box">
+					<div class="welcomeMessage">
+						Please provide the invitation code to access the online portfolio.
+					</div>
 					<input style="text-align: center;" id="password" type="text" placeholder="Invitation code" maxlength="9" />
 					<button id="loginbutton" type="button">&#128273;</button>
-					<p id="wrongPassword" style="display: none">wrong password</p>
 				</div>
 			</div>
 		</div>
@@ -168,7 +178,6 @@ button
 
 				parent.location.hash= hash;
 
-				//$("#wrongPassword").show();
 				$("#password").attr("placeholder","wrong code");
 				$("#password").val("");
 			}
