@@ -90,6 +90,10 @@
            text-align: center;
         }
 
+        .box {
+          display: none;
+        }
+
         /*
         button
         {
@@ -168,7 +172,7 @@
 
                                         <div class="c-header__brand">
 
-                                            <div class="c-brand">
+                                            <div class="c-brand box">
                                                 <h1 class="c-brand__title  t-title">
                                                     <span class="c-brand__sizer">
                                                         <span class="a-header  c-brand__first-word  t-title__first-word in-view" data-sr-id="3" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1.2s ease 0.7s, opacity 1.2s ease 0.7s; transition: transform 1.2s ease 0.7s, opacity 1.2s ease 0.7s; ">
@@ -180,13 +184,12 @@
                                                   <span class="c-brand__sizer">
                                                       <p>Please provide an invitation code to access the online portfolio
                                                   </span>
-                                                  <div class="box">
-                                                    <input style="text-align: center;" id="password" type="text" placeholder="Invitation code" maxlength="9" />
-                                                    <button class="t-social-button" id="loginbutton" type="button">
-                                                        <i class="fa  fa-lg  fa-key in-view"></i>
-                                                    </button>
-                                                  </div>
-                                                </div>
+                                                    <div class="form-group">
+                                                      <input class="form-control form-control-sm" style="text-align: center;" id="password" type="text" placeholder="Invitation code" maxlength="9" />
+                                                      <button class="t-social-button" id="loginbutton" type="button">
+                                                          <i class="fa  fa-lg  fa-key in-view"></i>
+                                                      </button>
+                                                    </div>
                                                 </h2>
                                             </div><!-- /c-brand -->
 
