@@ -748,12 +748,14 @@
             return "";
         }
 
-        var verifyid = getCookie("verifyid");
-        console.log(verifyid);
-        if (verifyid === 0) {
-          console.log("nothing");
-          window.location= "../";
-        }
+        $( document ).ready(function() {
+          var verifyid = getCookie("verifyid");
+          console.log(verifyid);
+          if (verifyid === 0) {
+            console.log("nothing");
+            window.location= "../";
+          }
+        });
 
         </script>
 
