@@ -751,7 +751,7 @@
         $( document ).ready(function() {
           var verifyid = getCookie("verifyid");
           console.log(verifyid);
-          if (verifyid === 0) {
+          if (verifyid == "") {
             console.log("nothing");
             window.location= "../";
           }
