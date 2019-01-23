@@ -363,22 +363,26 @@
      	$('#password').on('paste', function () {
      	  var element = this;
      	  	setTimeout(function () {
-     	    	var text = $(element).val();
-     				if (text.length >= 4) {
+            var tlength = 8;
+     	    	var text = $(element).val().replace(/\s/g,'');
+            if (text.indexOf("-") != 0) tlength = tlength + 1;
+            if (text.length > tlength) text = text.substr(0, tlength);
+     				if (text.length >= 4 && text.indexOf("-") != 4) {
      					$(element).val(text.substr(0,4)+'-'+text.substr(4));
-     				}
+     				} else {
+              $(element).val(text);
+            }
      		}, 0);
      	});
-     	$("#password").focus();
-
      	$( document ).ready(function() {
      		var verifyid = getCookie("verifyid");
      		if (verifyid) {
      			var chash= Sha1.hash(verifyid);
      			window.location= chash;
      		} else {
-     			$(".box").fadeIn("slow");
-          $("#password").focus();
+     			$(".box").fadeIn("slow", function() {
+            $("#password").focus();
+          });
      		}
      	});
 
