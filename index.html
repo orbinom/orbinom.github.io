@@ -364,8 +364,8 @@
      	  var element = this;
      	  	setTimeout(function () {
      	    	var text = $(element).val();
-     				if (text.length == 8) {
-     					$(element).val(text.substr(0,4)+'-'+text.substr(4,4));
+     				if (text.length >= 4) {
+     					$(element).val(text.substr(0,4)+'-'+text.substr(4));
      				}
      		}, 0);
      	});
